@@ -1,0 +1,83 @@
+<svg id="Off" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="64" viewBox="0 0 64 64">
+  <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c142 79.160924, 2017/07/13-01:06:39        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description rdf:about=""/>
+   </rdf:RDF>
+</x:xmpmeta>
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                           
+<?xpacket end="w"?></metadata>
+<defs>
+    <style>
+      .cls-1, .cls-2, .cls-3 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #1a1817;
+        filter: url(#filter);
+      }
+
+      .cls-2, .cls-3 {
+        stroke: #000;
+        stroke-linejoin: round;
+        stroke-width: 4px;
+      }
+
+      .cls-3 {
+        fill: #66615c;
+        filter: url(#filter-2);
+      }
+    </style>
+    <filter id="filter" x="-2" y="44" width="68" height="22" filterUnits="userSpaceOnUse">
+      <feGaussianBlur result="blur" in="SourceAlpha"/>
+      <feFlood result="flood" flood-color="#fff" flood-opacity="0.75"/>
+      <feComposite result="composite" operator="out" in2="blur"/>
+      <feOffset result="offset" dx="0.695" dy="3.939"/>
+      <feComposite result="composite-2" operator="in" in2="SourceAlpha"/>
+      <feBlend result="blend" mode="overlay" in2="SourceGraphic"/>
+    </filter>
+    <filter id="filter-2" x="-2" y="-3" width="68" height="59" filterUnits="userSpaceOnUse">
+      <feGaussianBlur result="blur" stdDeviation="2.667" in="SourceAlpha"/>
+      <feFlood result="flood" flood-opacity="0.15"/>
+      <feComposite result="composite-2" operator="out" in2="blur"/>
+      <feComposite result="composite" operator="in" in2="SourceAlpha"/>
+      <feBlend result="blend" mode="overlay" in2="SourceGraphic"/>
+      <feGaussianBlur result="blur-2" in="SourceAlpha"/>
+      <feFlood result="flood-2" flood-color="#fff" flood-opacity="0.5"/>
+      <feComposite result="composite-3" operator="out" in2="blur-2"/>
+      <feOffset result="offset" dx="-0.695" dy="-3.939"/>
+      <feComposite result="composite-4" operator="in" in2="SourceAlpha"/>
+      <feBlend result="blend-2" mode="overlay" in2="blend"/>
+    </filter>
+  </defs>
+  <path id="Forme_5_copie_9" data-name="Forme 5 copie 9" class="cls-1" d="M4,4V52L6,64H61l2-11V9L55,3,12,5Z"/>
+  <g style="fill: #1a1817; filter: url(#filter)">
+    <path id="Forme_4_copie_9" data-name="Forme 4 copie 9" class="cls-2" d="M4,50h8l1.483,4.892L20,50H42L39,60l7-10H60L58,60H8L6,58l5-1L5,56Z" style="stroke: inherit; filter: none; fill: inherit"/>
+  </g>
+  <use xlink:href="#Forme_4_copie_9" style="stroke: #000; filter: none; fill: none"/>
+  <g style="fill: #66615c; filter: url(#filter-2)">
+    <path id="Forme_3_copie_9" data-name="Forme 3 copie 9" class="cls-3" d="M60,3H6V22l6,2L6,25,4,48h8l3-2h5l3,3,8,1,1-7,2,7H60M51,1l11,9V1H51ZM34-2L27,12V-2h7Z" style="stroke: inherit; filter: none; fill: inherit"/>
+  </g>
+  <use xlink:href="#Forme_3_copie_9" style="stroke: #000; filter: none; fill: none"/>
+</svg>

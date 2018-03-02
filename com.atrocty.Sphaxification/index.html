@@ -1,30 +1,41 @@
 <!doctype html>
-
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Sphaxification</title>	
-	<link id="ppstyle" rel="stylesheet" type="text/css" href="css/app.css">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-  	<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css">
+	<script src="./lib/CSInterface.js"></script>
+	<script src="./lib/JQuery/jquery.js"></script>
+	<script src="./lib/JQuery/jquery-ui-1.9.1.custom.min.js"></script>
+	<script src="./lib/ext.js"></script>
+	<script src="./lib/navbar.js"></script>
+	<script src="./lib/unzipper.js"></script>
+	
+	<!--Debugger-->
+	<script src="./lib/debug.js"></script>
+<!--	<script src="./lib/test.js"></script>-->
+	<!--Debugger-->
+	
+	<title>ExSphax</title>
+	<link href="css/main.css" rel="stylesheet" type="text/css" media="screen">
+	<link href="css/jquery-ui.css" rel="stylesheet" type="text/css" media="screen">
 </head>
 
-<body>
-	<div class="navbar">
-		<div class="navbar-inner">
-			<ul class="nav">
-				<li><a href="html/Start.html">Start</a></li>
-				<li><a href="html/Texture.html">Texture</a></li>
-				<li><a href="html/Editing.html">Re-Edit</a></li>
-			</ul>
-		</div>
-	</div>
-	<!--
-	<div id="content">
-		<ul>
-			<li><button class="default" id="btn_PHXS" onClick="onClickButton('PHXS')" disabled="true">Run ps code</button></li>
+<body onLoad="onLoaded()">
+	<div class="topnav">
+		<ul id="buttons">
+			<li><a href="javascript:void(0)" onclick="clickButton(0)" class=""><img src="css/images/icon_new.png"/></a></li>
+			<li><a href="javascript:void(0)" onclick="clickButton(1)" class=""><img src="css/images/icon_save.png"/></a></li>
+			<li><a href="javascript:void(0)" onclick="clickButton(2)" class=""><img src="css/images/icon_texturize.png"/></a></li>
+			<li><a href="javascript:void(0)" onclick="clickButton(3)" class=""><img src="css/images/icon_options.png"/></a></li>
 		</ul>
+		
+		<input type="file" id="zipfile" class="zipfile" name="zipfile" accept=".zip" />
+		<label for="zipfile">Choose a file</label><br />
+		<textarea id="result" name="result" class="result" readonly="readonly" ></textarea>
+		<!--Debugger-->
+		<div id="debugdialog" title="Dialog-Debug">Debuggin</div>
+		<script>$( "#debugdialog" ).dialog({ autoOpen: true });</script>
+		<!--Debugger-->
+		
 	</div>
-	-->
 </body>
 </html>
