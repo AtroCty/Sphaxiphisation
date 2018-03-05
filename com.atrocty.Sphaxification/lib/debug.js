@@ -30,10 +30,8 @@ function NodeAvailable(name)
 
 function getAllMethods(object)
 {
-	console.log(Object.getOwnPropertyNames(object));
-	console.log("Nummerbla");
 	console.log(Object.getOwnPropertyNames(object).filter(function(p)
 	{
-		return typeof object[p] === 'function';
+		return typeof object[p] /*=== 'function'*/;
 	}));
 }

@@ -1,77 +1,58 @@
-var csInterface = new CSInterface();
+var objCsInterface 		= new CSInterface();
 // CEP7+ need absolute path, not relative
-var dir = csInterface.getSystemPath(SystemPath.EXTENSION);
-var JSZip = require(dir + "/lib/jszip/dist/jszip.js");
-var zip = new JSZip();
+var strDir 				= objCsInterface.getSystemPath(SystemPath.EXTENSION);
+const objJSZip 			= require(strDir + "/lib/jszip/");
+const objFS 			= require(strDir + "/lib/fs-extra/");
+const strValidFiletypes = [".png",".png.mcmeta"];
+var objZip 				= new objJSZip();
 
-function moduleAvailable(name)
+$(function()
 {
-	try
+	$("#zipfile").change(function(event)
 	{
-		require.resolve(name);
-		return true;
-	}
-	catch (e)
+		// Closure to capture the file information.
+		function handleFile(objFile)
+		{
+			objJSZip.loadAsync(objFile, {createFolders: true})
+			.then
+			(
+				function(objZip)
+				{
+					objZip.forEach(function(strRelativePath, objZipEntry)
+					{
+						objZipEntry.async('nodebuffer').then(
+							function(content) 
+							{
+								debugAlert(content);
+								var strDest = strDir + '/' + objZipEntry.name;
+								objFS.writeFileSync(strDest, content);
+							});
+						debugAlert(objZipEntry.name);
+					});
+				},
+				function(error)
+				{
+					debugAlert("Error reading " + objFile.name + ": " + error.message);
+				}
+			);
+		}
+		debugAlert(event.target.files[0].name);
+		if (boolCorrectFiletype(event.target.files[0].name))
+		{
+			handleFile(event.target.files[0]);	
+		}
+	});
+})
+
+function boolCorrectFiletype(strPath)
+{
+	debugAlert(typeof(strPath));
+	for (var i = 0; i < strValidFiletypes.length; i++)
 	{
-		debugAlert(e);
+//		if strPath.endsWith(strValidFiletypes[i])
+//		{
+//			return true;
+//		}
 	}
 	return false;
 }
-$(function()
-{
-	$("#zipfile").change(function(evt)
-		{
-			debugAlert("PENIS");
-			debugAlert(this);
-			// remove content
-			$("#result")
-				.html("");
-			// be sure to show the results
-			$("#result_block")
-				.removeClass("hidden")
-				.addClass("show");
-			// Closure to capture the file information.
-			function handleFile(f)
-			{
-				var title = $("<h4>",
-				{
-					text: f.name
-				});
-				var fileContent = $("<ul>");
-				$("#result")
-					.append(title);
-				$("#result")
-					.append(fileContent);
-				var dateBefore = new Date();
-				JSZip.loadAsync(f)
-					.then(
-						function(zip)
-						{
-							var dateAfter = new Date();
-							title.append($("<span>",
-							{
-								"class": "small",
-								text: " (loaded in " + (dateAfter - dateBefore) + "ms)"
-							}));
-							zip.forEach(function(relativePath, zipEntry)
-							{ // 2) print entries
-								debugAlert(zipEntry.name);
-							});
-						},
-						function(e)
-						{
-							$("#result")
-								.append($("<div>",
-								{
-									"class": "alert alert-danger",
-									text: "Error reading " + f.name + ": " + e.message
-								}));
-						});
-			}
-			var files = evt.target.files;
-			for (var i = 0; i < files.length; i++)
-			{
-				handleFile(files[i]);
-			}
-		});
-})
