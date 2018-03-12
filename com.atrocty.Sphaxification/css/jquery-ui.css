@@ -1024,7 +1024,7 @@
 	border: 1px solid #999999/*{borderColorHover}*/
 	;
 	background: #dadada/*{bgColorHover}*/
-	url(images/ui-bg_glass_75_dadada_1x400.png)/*{bgImgUrlHover}*/
+	url(images/)/*{bgImgUrlHover}*/
 	50%/*{bgHoverXPos}*/
 	50%/*{bgHoverYPos}*/
 	repeat-x/*{bgHoverRepeat}*/
