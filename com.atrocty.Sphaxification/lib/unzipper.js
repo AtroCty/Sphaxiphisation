@@ -82,22 +82,6 @@ $( function ( )
 					// 	console.log(imgData);
 					// }
 				} )
-			/*objZip.forEach(function(strRelativePath, objZipEntry)
-				{
-					objZipEntry.async('nodebuffer').then(
-						function(content)
-						{
-							debugAlert(content);
-							var strDest = strDir + '/' + objZipEntry.name;
-							objFS.writeFileSync(strDest, content);
-						});
-					debugAlert(objZipEntry.name);
-				});
-			},
-			function(error)
-			{
-				debugAlert("Error reading " + objFile.name + ": " + error.message);
-			}*/
 		}
 		if ( event.target.files[ 0 ].name.endsWith( ".zip" ) )
 		{
